@@ -6,5 +6,12 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome HRS</h1>
-    <p>MPOB Human Resources System</p>
+    <p>MPOB Human Resources System</p>    
 </div>
+
+<h2>Senarai Peserta Latihan</h2>
+<ul>
+@foreach (var item in Model.Items) {
+    <li>@item</li>
+}
+</ul>
