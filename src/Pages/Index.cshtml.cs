@@ -10,16 +10,17 @@ namespace Hrs.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
+        public List<Staff> Items { get; set; } 
+                
         public void OnGet()
-        {
-
+        {            
+            Items = new List<Staff> {
+                new Staff { StaffId="K01231", Name = "Anton Heryanto Hasan" },
+                new Staff { StaffId="K01232", Name = "Aishah Rodzi" },
+                new Staff { StaffId="K01233", Name = "Faiq ITCS" },
+                new Staff { StaffId="K01234", Name = "Liyana" },
+                new Staff { StaffId="K01235", Name = "Muhamad Zul Razak" },
+            };
         }
     }
 }
