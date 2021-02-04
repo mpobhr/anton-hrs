@@ -7,23 +7,26 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome HRS</h1>
-    <p>MPOB Human Resources System</p>    
+    <p>MPOB Human Resources System</p>
 </div>
 
 <h2>Senarai Peserta Latihan</h2>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Bil</th>
             <th>Nama</th>
+            <th>No Pekerja</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Items) {
-    <tr>
-        <td>@(i++).</td>
-        <td>@item</td>
-    </tr>
-}
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@(i++).</td>
+                <td>@item</td>
+                <td>@item.StaffId</td>
+            </tr>
+        }
     </tbody>
 </table>
