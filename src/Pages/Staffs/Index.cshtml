@@ -1,0 +1,44 @@
+﻿@page "{id?}"
+@model IndexModel
+@{
+    ViewData["Title"] = Model.Item != null ? "Details": "Listing";
+    int i = 1;
+    int id = 1;
+}
+
+@if (Model.Item != null) {
+<div class="card">
+    <div class="card-body">
+        <a href="~/staffs/edit/@Model.Item.Id" class="btn btn-primary">Edit</a><br>
+        @Model.Item
+    </div>
+</div>
+
+} else {
+<h2>Senarai Peserta Latihan</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Bil</th>
+            <th>Nama</th>
+            <th>No Pekerja</th>
+            <td>#</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@(i++).</td>
+                <td>@item</td>
+                <td>@item.StaffId</td>
+                <td>
+                    <a href="~/staffs/@id" class="btn btn-outline-success">Details</a>
+                    <a href="~/staffs/edit/@id" class="btn btn-outline-primary">Edit</a>
+                </td>
+            </tr>            
+            id++;
+        }
+    </tbody>
+</table>
+}

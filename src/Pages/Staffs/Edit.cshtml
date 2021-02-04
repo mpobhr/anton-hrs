@@ -1,0 +1,23 @@
+﻿@page "{id?}"
+@model EditModel
+@{
+    ViewData["Title"] = Model.Item != null ? "Edit Staff": "New Staff";
+}
+
+<form class="card" method="post">
+    <div class="card-body">
+        <input type="hidden" asp-for="Item.Id">
+        <div class="form-group">
+            <label asp-for="Item.Name"></label>
+            <input asp-for="Item.Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Item.StaffId"></label>
+            <input asp-for="Item.StaffId" class="form-control" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</form>
+
