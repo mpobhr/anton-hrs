@@ -2,6 +2,7 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Dashboard";
+    int i = 1;
 }
 
 <div class="text-center">
@@ -10,8 +11,19 @@
 </div>
 
 <h2>Senarai Peserta Latihan</h2>
-<ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Bil</th>
+            <th>Nama</th>
+        </tr>
+    </thead>
+    <tbody>
 @foreach (var item in Model.Items) {
-    <li>@item</li>
+    <tr>
+        <td>@(i++).</td>
+        <td>@item</td>
+    </tr>
 }
-</ul>
+    </tbody>
+</table>
